@@ -18,3 +18,27 @@
 .loading-animation {
     animation: fadeInOut 1.5s infinite;
 }
+
+.scroll-container {
+    overflow-y: scroll;
+    border: 1px solid black;
+    border-radius: 10px; /* added border radius */
+    height: 800px;
+}
+
+/* Custom scrollbar styles */
+.scroll-container::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 10px; /* added border radius */
+}
+.scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px; 
+}
+.scroll-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px; /* added border radius for scrollbar thumb */
+}
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

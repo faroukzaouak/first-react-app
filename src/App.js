@@ -3,6 +3,7 @@ import Cardlist from './Cardlist';
 import Searchbox from './Searchbox';
 import Scroll from './Scroll';
 import './app.css';
+import Erreurboundry from './Erreurboundry';
 
 class App extends React.Component {
     constructor() {
@@ -21,7 +22,7 @@ class App extends React.Component {
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(response => response.json())
             .then(users => this.setState({ robots: users }));
-        
+
     }
 
 
@@ -34,19 +35,21 @@ class App extends React.Component {
         if (this.state.robots.length === 0) {
             return <h1 className='tc loading-animation'>Loading...</h1>;
         }
-        
+
         else {
             return (
                 <div className='tc'>
                     <h1 className='f1'>RoboFriends</h1>
                     <Searchbox searchchange={this.searchchange} />
                     <Scroll>
-                        <Cardlist robots={filteredrobots} />
+                        <Erreurboundry>
+                            <Cardlist robots={filteredrobots} />
+                        </Erreurboundry>
                     </Scroll>
                 </div>
             );
         }
-        
+
     }
 
 }
